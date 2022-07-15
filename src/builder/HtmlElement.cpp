@@ -44,3 +44,8 @@ const std::vector<HtmlElement>& HtmlElement::get_child_elements() noexcept
 {
     return child_elements;
 }
+
+HtmlBuilder HtmlElement::build(const std::string& root_name)
+{
+    return HtmlBuilder{root_name};
+}

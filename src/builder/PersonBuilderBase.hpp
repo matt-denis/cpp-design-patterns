@@ -2,15 +2,20 @@
 #define PERSON_BUILDER_BASE_H
 
 #include "Person.hpp"
+#include "PersonAddressBuilder.hpp"
 
 class PersonBuilderBase
 {
 public:
-    constexpr Person& operator()() const noexcept;
+    operator Person();
+
+    PersonAddressBuilder lives() const;
+
 protected:
-    PersonBuilderBase(Person& person);
-private:
     Person& person;
+
+    explicit PersonBuilderBase(Person& person);
+
 
 
 

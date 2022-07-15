@@ -1,21 +1,28 @@
-#ifndef PERSON_H 
-#define PERSON_H 
+#ifndef PERSON_H
+#define PERSON_H
 
-#include <string>
+#include "PersonBuilderBase.hpp"
 #include <cstdint>
+#include <iostream>
+#include <string>
 
 class Person
 {
 
+    friend std::ostream& operator<<(std::ostream&, const Person&);
+    friend class PersonBuilderBase;
+    friend class PersonAddressBuilder;
+    friend class PersonJobBuilder;
+
 public:
-    static int build(const std::string& name);
+    static PersonBuilderBase create(const std::string& name);
+
 
 private:
     std::string name;
     std::string street_address, postcode, city;
     std::string company_name, position;
     std::int32_t annual_income{};
-
 };
 
 #endif

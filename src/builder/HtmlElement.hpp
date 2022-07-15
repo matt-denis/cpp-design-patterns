@@ -22,6 +22,8 @@ public:
     void set_text(std::string text);
 
     const std::vector<HtmlElement>& get_child_elements() noexcept;
+
+    static HtmlBuilder build(const std::string& root_name);
     
 
 private:

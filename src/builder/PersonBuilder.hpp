@@ -3,9 +3,9 @@
 
 #include "PersonBuilderBase.hpp"
 
-class PersonBuilder : PersonBuilderBase
+class PersonBuilder : public PersonBuilderBase
 {
-protected:
+public:
     PersonBuilder();
 
 private:
